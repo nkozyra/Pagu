@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<script src="pagu.js"></script>
+<body>
+<h3>Enter Your Name:</h3>
+<input onchange="modifyData();" onkeyup="modifyData();" value="Bill" type="text" id="name" placeholder="Your name" />
+<div id="test"></div>
+<script>
+
+var tpl = "{{name.!is(Bill)}}Wait, you're not Bill!{{/name.is}}{{name.is(Bill)}}Hello, Bill!{{/name.is}}";
+
+function modifyData() {
+  var data = { "name": document.getElementById('name').value };
+  console.log(data);
+  var p = new Pagu(data,tpl);
+  document.getElementById('test').innerHTML = p.parsed;
+}
+modifyData();
+</script>
+</body>
+</html>

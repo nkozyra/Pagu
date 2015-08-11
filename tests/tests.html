@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pagu Unit Tests</title>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.18.0.css">
+  <style>
+  .pagu-output {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    font-family: arial,sans-serif;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="pagu-output" id="variable-test"></div>
+  <div class="pagu-output" id="loop-test"></div>
+  <div class="pagu-output" id="string-value-comparison"></div>
+  <div class="pagu-output" id="int-value-comparison"></div>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="http://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+  <script src="../src/pagu.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
