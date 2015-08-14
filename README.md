@@ -38,9 +38,9 @@ Callback functions are returned first in the parsing mechanism, so you can combi
 
 For example:
 ```javascript
-{ "foo": "bar", "baz": function() { return this.bar.toUpperCase(); } }
+{ "foo": "bar", "baz": function() { return this.foo.toUpperCase(); } }
 ```
 versus
 ```javascript
-{ "baz": function() { return this.bar.toUpperCase(); }, "foo": "bar" }
+{ "baz": function() { return this.foo.toUpperCase(); }, "foo": "bar" }
 ```
