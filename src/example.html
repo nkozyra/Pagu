@@ -7,11 +7,14 @@
 <div id="test"></div>
 <script>
 
-var tpl = "{{name.!is(Bill)}}Wait, you're not Bill!{{/name.is}}{{name.is(Bill)}}Hello, Bill!{{/name.is}}";
+var tpl = "{{name.is(Bill)}}Hello, Bill!{{/name.is}}{{name.!is(Bill)}}Wait, you're not Bill!{{/name.!is}}{{testcase.is(bill)}} ... Oh, don't be sensitive, Bill, I know it's you.{{/testcase.is}}";
+
+var tpl = "{{sadarray.empty}}Nothing in this array!{{/sadarray.empty}} {{no_value}} {{fale.is(Bill)}}then{{/fale.is}}{{fake.if}}...{{/fake.if}}{{test.if}}some {{name}} vvalue{{/test.if}}";
 
 function modifyData() {
-  var data = { "name": document.getElementById('name').value };
-  console.log(data);
+  var data = { "sadarray": [1,2], "test": "s", "name": document.getElementById('name').value, "guh": "what", "testcase": function() { if (this.name === 'bill' && this.name !== 'Bill') { return 'bill'; } else { return ''; } }   };
+  data.lowername;
+  console.log("FX: " + data);
   var p = new Pagu(data,tpl);
   document.getElementById('test').innerHTML = p.parsed;
 }

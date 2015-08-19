@@ -55,6 +55,15 @@ var Pagu = function(obj,template) {
 
 
         if (obj[o] instanceof Array) {
+          // empty array
+          var emptyTest = "{{"+o+"\.empty}}(.*?){{/"+o+"\.empty}}";
+          var emptyTplVar = new RegExp(emptyTest, 'gim');
+          console.log(emptyTest);
+          if (obj[o].length < 1) {
+            parsed = parsed.replace(emptyTplVar,'$1');
+          } else {
+            parsed = parsed.replace(emptyTplVar, '');
+          }
           var fullTpl = "{{"+o+"\.each}}(.*?){{/"+o+"\.each}}";
           var totTpl = ".*?" + fullTpl + ".*";
           var arrTplVar = new RegExp(fullTpl,'gim');
