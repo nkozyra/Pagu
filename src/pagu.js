@@ -41,7 +41,6 @@ var Pagu = function(obj,template) {
           var cmp = (valComp[1] === '!is' ? false : true);
           var innerTest = valComp[2];
           var removePat = new RegExp(valComp[0].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"),'gm');
-          console.log(removePat);
           var replaceString = '';
           if ((innerTest == obj[o]) === cmp) {
             replaceString = valComp[3];
@@ -58,7 +57,6 @@ var Pagu = function(obj,template) {
           // empty array
           var emptyTest = "{{"+o+"\.empty}}(.*?){{/"+o+"\.empty}}";
           var emptyTplVar = new RegExp(emptyTest, 'gim');
-          console.log(emptyTest);
           if (obj[o].length < 1) {
             parsed = parsed.replace(emptyTplVar,'$1');
           } else {

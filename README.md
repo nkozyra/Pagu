@@ -33,6 +33,12 @@ Allows value-only comparison tests
 {{value.!is(2)}}The value is not two!{{/value.!is}}
 ```
 
+## empty : -arrays
+Test for empty arrays
+```javascript
+{{array.empty}}Nothing here{{/array.empty}}
+{{array.!empty}}Some items in this array!{{/array.!empty}}
+
 ## Callbacks
 Callback functions are returned first in the parsing mechanism, so you can combine them with the previous mechanisms (loops, checks, etc.) Note: as the objects are rendered in order, any references to variables within the object's scope should be declared *before* a callback function.
 
