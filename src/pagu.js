@@ -5,6 +5,11 @@ var Pagu = function(obj,template) {
   self.obj = obj;
   self.template = template;
   self.parsed = template;
+  // lex/prs
+  self.grammar = {
+    tokens: [],
+    ctlchr: []
+  };
   this.escapeRegexp = function(r) {
     return new RegExp(r.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"),'gm');
   };
